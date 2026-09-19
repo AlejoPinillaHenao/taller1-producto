@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proyecto_inicial.LoginPages"
+             Title="LoginPages">
+    <VerticalStackLayout
+        Padding="30,0"
+        BackgroundColor="White"
+        Spacing="30">
+        <Image
+            Aspect="AspectFit"
+            HeightRequest="185"
+            SemanticProperties.Description="dotnet bot in a hovercraft number nine"
+            Source="dotnet_bot.png"/>
+        <Label
+            Padding="40,0"
+            HorizontalOptions="Center"
+            Text="Iniciar Sesión"
+            VerticalOptions="Center"/>
+        <Entry
+            x:Name="usuario"
+            BackgroundColor="White"
+            Keyboard ="Text"
+            MaxLength="50"
+            Placeholder="Entrar Usuario "
+            Text="Admin"
+            TextColor="Black"/>
+        <Entry
+            x:Name="password"
+            BackgroundColor="White"
+            Keyboard="Password"
+            MaxLength="6"
+            Placeholder="Entrar Contraseña "
+            Text="123456"
+            TextColor="Black"/>
+        <Button
+            x:Name="btnLogin"
+            BackgroundColor="LightBlue"
+            Clicked="btnLogin_Clicked"
+            Text="Entrar"
+            TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>     
