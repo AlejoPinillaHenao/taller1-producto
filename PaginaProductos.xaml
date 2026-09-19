@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Producto.PaginaProductos"
-             Title="Tenda Vendemas">
+             Title="Rizos y Melius S.A.S">
     <ScrollView>
         <VerticalStackLayout Padding="30,20" Spacing="15">
             <Label
