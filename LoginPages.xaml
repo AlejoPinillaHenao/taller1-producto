@@ -28,7 +28,7 @@
         <Entry
             x:Name="password"
             BackgroundColor="White"
-            Keyboard="Password"
+            IsPassword="True"
             MaxLength="6"
             Placeholder="Entrar Contraseña "
             Text="123456"
