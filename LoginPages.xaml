@@ -35,7 +35,7 @@
             TextColor="Black"/>
         <Button
             x:Name="btnLogin"
-            BackgroundColor="LightBlue"
+            BackgroundColor="{StaticResource Primary}"
             Clicked="btnLogin_Clicked"
             Text="Entrar"
             TextColor="White"/>

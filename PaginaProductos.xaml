@@ -35,7 +35,7 @@
 
             <Button
                 x:Name="btnAgregar"
-                BackgroundColor="LightBlue"
+                BackgroundColor="{StaticResource Primary}"
                 Clicked="btnAgregar_Clicked"
                 Text="Agregar Producto"
                 TextColor="White"/>
