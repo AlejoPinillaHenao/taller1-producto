@@ -10,7 +10,7 @@ public partial class LoginPages : ContentPage
         InitializeComponent();
     }
 
-    private void btnLogin_Clicked(object sender, EventArgs e)
+    private async void btnLogin_Clicked(object sender, EventArgs e)
     {
         var user = usuario.Text;
         var pass = password.Text;
@@ -18,30 +18,30 @@ public partial class LoginPages : ContentPage
 
         if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
         {
-            DisplayAlert("Error", "Por favor ingrese usuario y contraseña", "OK");
+            await DisplayAlertAsync("Error", "Por favor ingrese usuario y contraseña", "OK");
             return;
         }
 
         if (login.ValidarAcceso(user, pass))
         {
-            DisplayAlert("Éxito", "¡Bienvenido!", "OK");
-            Application.Current.MainPage = new NavigationPage(new MainPage())
+            await DisplayAlertAsync("Éxito", "¡Bienvenido!", "OK");
+
+            var window = Application.Current?.Windows.Count > 0 ? Application.Current.Windows[0] : null;
+            if (window is not null)
             {
-                BarBackgroundColor = Color.FromArgb("#1E90FF"),
-                BarTextColor = Colors.White
-            };
+                window.Page = new NavigationPage(new MainPage())
+                {
+                    BarBackgroundColor = Color.FromArgb("#1E90FF"),
+                    BarTextColor = Colors.White
+                };
+            }
 
             usuario.Text = string.Empty;
             password.Text = string.Empty;
-
         }
-
         else
         {
-            DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+            await DisplayAlertAsync("Error", "Usuario o contraseña incorrectos", "OK");
         }
-
-
-
     }
 }
