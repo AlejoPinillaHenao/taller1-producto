@@ -10,8 +10,8 @@
         <Image
             Aspect="AspectFit"
             HeightRequest="185"
-            SemanticProperties.Description="dotnet bot in a hovercraft number nine"
-            Source="dotnet_bot.png"/>
+            SemanticProperties.Description="Logo Rizos y Melius Córdoba SAS"
+            Source="rizos_melius_logo.svg"/>
         <Label
             Padding="40,0"
             HorizontalOptions="Center"

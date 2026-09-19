@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7B6D2"/>
+      <stop offset="100%" stop-color="#D63384"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3D27A"/>
+      <stop offset="100%" stop-color="#C9A227"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="200" cy="200" r="190" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#gold)" stroke-width="8"/>
+
+  <!-- Rizo (hair curl) -->
+  <path d="M140 260
+           C 90 260, 90 190, 140 190
+           C 175 190, 175 230, 150 230
+           C 132 230, 132 205, 150 205"
+        fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Tijeras (scissors) -->
+  <g transform="translate(215,150) rotate(20)">
+    <circle cx="0" cy="55" r="14" fill="none" stroke="#FFFFFF" stroke-width="9"/>
+    <circle cx="34" cy="55" r="14" fill="none" stroke="#FFFFFF" stroke-width="9"/>
+    <path d="M8 46 L92 -20" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+    <path d="M26 46 L-58 -20" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <text x="200" y="315" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Rizos y Melius</text>
+  <text x="200" y="348" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#FFF3F9" text-anchor="middle" letter-spacing="2">CÓRDOBA SAS</text>
+</svg>
