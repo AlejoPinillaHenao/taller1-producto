@@ -49,9 +49,6 @@ namespace Producto.Clases
         public override string ToString()
         {
             return $"Nombre: {_nombre}, Precio: {_precio:C}, Cantidad: {_cantidad}, Subtotal: {CalcularSubtotal():C}, Total con IVA: {CalcularTotalConIva():C}";
-        |
-
-
-
+        }
     }
 }
