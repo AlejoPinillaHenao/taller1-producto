@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Proyecto_inicial.Clases
+namespace Producto.Clases
 {
     class Login
     {

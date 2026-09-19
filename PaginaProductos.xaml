@@ -3,19 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Producto.PaginaProductos"
              Title="PaginaProductos">
-    <VerticalStackLayout>
-        <Label 
-            Text="Ingresar Producto"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry
-        x:Name="producto"
-        BackgroundColor="White"
-        Keyboard ="Text"
-        MaxLength="50"
-        Placeholder="Entrar Producto "
-        Text=""
-        TextColor="Black"/>
-           
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="30,20" Spacing="15">
+            <Label
+                Text="Ingresar Producto"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                FontSize="20" />
+
+            <Entry
+                x:Name="nombre"
+                BackgroundColor="White"
+                Keyboard="Text"
+                MaxLength="50"
+                Placeholder="Nombre del producto"
+                TextColor="Black"/>
+
+            <Entry
+                x:Name="precio"
+                BackgroundColor="White"
+                Keyboard="Numeric"
+                Placeholder="Precio"
+                TextColor="Black"/>
+
+            <Entry
+                x:Name="cantidad"
+                BackgroundColor="White"
+                Keyboard="Numeric"
+                Placeholder="Cantidad"
+                TextColor="Black"/>
+
+            <Button
+                x:Name="btnAgregar"
+                BackgroundColor="LightBlue"
+                Clicked="btnAgregar_Clicked"
+                Text="Agregar Producto"
+                TextColor="White"/>
+
+            <Label
+                x:Name="resultado"
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
