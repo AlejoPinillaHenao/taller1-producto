@@ -39,11 +39,13 @@ namespace Producto.Clases
         {
             return _precio * _cantidad;
         }
+        public decimal CalcularIva()
+        {
+            return CalcularSubtotal() * 0.19m; // Suponiendo un IVA del 19%
+        }
         public decimal CalcularTotalConIva()
         {
-            
-            decimal iva = CalcularSubtotal() * 0.19m; // Suponiendo un IVA del 19%
-            return CalcularSubtotal() + iva;
+            return CalcularSubtotal() + CalcularIva();
         }
 
         public override string ToString()
