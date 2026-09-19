@@ -39,10 +39,6 @@
                 Clicked="btnAgregar_Clicked"
                 Text="Agregar Producto"
                 TextColor="White"/>
-
-            <Label
-                x:Name="resultado"
-                TextColor="Black"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

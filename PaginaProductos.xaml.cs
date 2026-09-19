@@ -21,6 +21,11 @@ public partial class PaginaProductos : ContentPage
 
 		Clases.Producto producto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
 
-		resultado.Text = producto.ToString();
+		await DisplayAlertAsync("Producto agregado", producto.ToString(), "OK");
+
+		nombre.Text = string.Empty;
+		precio.Text = string.Empty;
+		cantidad.Text = string.Empty;
+		nombre.Focus();
 	}
 }
