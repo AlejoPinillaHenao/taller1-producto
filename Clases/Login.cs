@@ -11,7 +11,7 @@ namespace Producto.Clases
         public Login()
         {
             Usuario = "Admin";
-            Clave = "1234";
+            Clave = "123456";
         }
 
         public bool ValidarAcceso(string usuario, string clave)
