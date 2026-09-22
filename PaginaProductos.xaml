@@ -39,6 +39,30 @@
                 Clicked="btnAgregar_Clicked"
                 Text="Agregar Producto"
                 TextColor="White"/>
+
+            <BoxView HeightRequest="1" Color="LightGray"/>
+
+            <Label Text="Productos Registrados"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+            
+
+            <CollectionView x:Name="collectionProductos"
+                            HeightRequest="300">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,5" Padding="10" CornerRadius="10">
+                            <Label Text="{Binding .}" FontSize="14"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <Label x:Name="labelTotal"
+                   Text="Total general: $0.0"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="End"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

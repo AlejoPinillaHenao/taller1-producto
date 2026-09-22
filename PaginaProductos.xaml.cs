@@ -1,11 +1,20 @@
+using Javax.Security.Auth;
+using System.Collections.ObjectModel;
+
 namespace Producto;
 
 public partial class PaginaProductos : ContentPage
+
 {
+	private ObservableCollection<Producto> _productos = new();
+
 	public PaginaProductos()
 	{
 		InitializeComponent();
-	}
+        collectionProductos.ItemsSource = _productos;
+
+
+    }
 
 	private async void btnAgregar_Clicked(object? sender, EventArgs e)
 	{
@@ -19,9 +28,32 @@ public partial class PaginaProductos : ContentPage
 			return;
 		}
 
-		Clases.Producto producto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
+	}
 
-		string mensaje = $"Producto\n{producto.Nombre}\n\n"
+		Producto nuevoProducto = new Producto(nombreProducto, precioProducto, cantidadProducto);
+        _productos.Add(nuevoProducto);
+
+		 ActualizarTotal();
+		 limpiarFormulario();
+
+		private void ActualizarTotal()
+		{
+			decimal total= _productos.Sum(p => p.CalcularTotalConIva());
+            labelTotal.Text = $"Total: {total:C}";
+
+        }
+
+		private void limpiarFormulario()
+		{
+			nombre.Text = string.Empty;
+			precio.Text = string.Empty;
+			cantidad.Text = string.Empty;
+
+        }
+
+        //Clases.Producto producto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
+
+        /* string mensaje = $"Producto\n{producto.Nombre}\n\n"
 			+ $"Precio\n{producto.Precio:C0}\n\n"
 			+ $"Cantidad\n{producto.Cantidad}\n\n"
 			+ $"Subtotal\n{producto.CalcularSubtotal():C0}\n\n"
@@ -33,6 +65,7 @@ public partial class PaginaProductos : ContentPage
 		nombre.Text = string.Empty;
 		precio.Text = string.Empty;
 		cantidad.Text = string.Empty;
-		nombre.Focus();
-	}
+		nombre.Focus(); */
+
+    
 }
