@@ -1,12 +1,12 @@
-using Javax.Security.Auth;
 using System.Collections.ObjectModel;
+
 
 namespace Producto;
 
 public partial class PaginaProductos : ContentPage
 
 {
-	private ObservableCollection<Producto> _productos = new();
+	private ObservableCollection<Clases.Producto> _productos = new();
 
 	public PaginaProductos()
 	{
@@ -28,44 +28,45 @@ public partial class PaginaProductos : ContentPage
 			return;
 		}
 
-	}
-
-		Producto nuevoProducto = new Producto(nombreProducto, precioProducto, cantidadProducto);
+        Clases.Producto nuevoProducto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
         _productos.Add(nuevoProducto);
 
-		 ActualizarTotal();
-		 limpiarFormulario();
+        ActualizarTotal();
+        limpiarFormulario();
 
-		private void ActualizarTotal()
-		{
-			decimal total= _productos.Sum(p => p.CalcularTotalConIva());
-            labelTotal.Text = $"Total: {total:C}";
+    }
+			
 
-        }
+	private void ActualizarTotal()
+	{
+		decimal total= _productos.Sum(p => p.CalcularTotalConIva());
+        labelTotal.Text = $"Total: {total:C}";
 
-		private void limpiarFormulario()
-		{
-			nombre.Text = string.Empty;
-			precio.Text = string.Empty;
-			cantidad.Text = string.Empty;
+    }
 
-        }
-
-        //Clases.Producto producto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
-
-        /* string mensaje = $"Producto\n{producto.Nombre}\n\n"
-			+ $"Precio\n{producto.Precio:C0}\n\n"
-			+ $"Cantidad\n{producto.Cantidad}\n\n"
-			+ $"Subtotal\n{producto.CalcularSubtotal():C0}\n\n"
-			+ $"IVA\n{producto.CalcularIva():C0}\n\n"
-			+ $"Total\n{producto.CalcularTotalConIva():C0}";
-
-		await DisplayAlertAsync("Producto agregado", mensaje, "OK");
-
+	private void limpiarFormulario()
+	{
 		nombre.Text = string.Empty;
 		precio.Text = string.Empty;
 		cantidad.Text = string.Empty;
-		nombre.Focus(); */
+
+    }
+
+    //Clases.Producto producto = new Clases.Producto(nombreProducto, precioProducto, cantidadProducto);
+
+    /* string mensaje = $"Producto\n{producto.Nombre}\n\n"
+		+ $"Precio\n{producto.Precio:C0}\n\n"
+		+ $"Cantidad\n{producto.Cantidad}\n\n"
+		+ $"Subtotal\n{producto.CalcularSubtotal():C0}\n\n"
+		+ $"IVA\n{producto.CalcularIva():C0}\n\n"
+		+ $"Total\n{producto.CalcularTotalConIva():C0}";
+
+	await DisplayAlertAsync("Producto agregado", mensaje, "OK");
+
+	nombre.Text = string.Empty;
+	precio.Text = string.Empty;
+	cantidad.Text = string.Empty;
+	nombre.Focus(); */
 
     
 }
