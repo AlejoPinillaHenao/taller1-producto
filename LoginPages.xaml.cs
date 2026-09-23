@@ -15,13 +15,13 @@ public partial class LoginPages : ContentPage
 
         if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
         {
-            await DisplayAlert("Error", "Por favor ingrese usuario y contraseña", "OK");
+            await DisplayAlertAsync("Error", "Por favor ingrese usuario y contraseña", "OK");
             return;
         }
 
         if (login.ValidarAcceso(user, pass))
         {
-            await DisplayAlert("Éxito", "¡Bienvenido!", "OK");
+            await DisplayAlertAsync("Éxito", "¡Bienvenido!", "OK");
 
             usuario.Text = string.Empty;
             password.Text = string.Empty;
@@ -30,7 +30,7 @@ public partial class LoginPages : ContentPage
         }
         else
         {
-            await DisplayAlert("Error", "Usuario o contraseña incorrectos", "OK");
+            await DisplayAlertAsync("Error", "Usuario o contraseña incorrectos", "OK");
         }
     }
 }

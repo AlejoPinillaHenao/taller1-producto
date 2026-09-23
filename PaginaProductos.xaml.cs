@@ -15,7 +15,7 @@ public partial class PaginaProductos : ContentPage
 			|| !decimal.TryParse(precio.Text, out decimal precioProducto)
 			|| !int.TryParse(cantidad.Text, out int cantidadProducto))
 		{
-			await DisplayAlert("Error", "Ingrese nombre, precio y cantidad válidos", "OK");
+			await DisplayAlertAsync("Error", "Ingrese nombre, precio y cantidad válidos", "OK");
 			return;
 		}
 
@@ -28,7 +28,7 @@ public partial class PaginaProductos : ContentPage
 			+ $"IVA\n{producto.CalcularIva():C0}\n\n"
 			+ $"Total\n{producto.CalcularTotalConIva():C0}";
 
-		await DisplayAlert("Producto agregado", mensaje, "OK");
+		await DisplayAlertAsync("Producto agregado", mensaje, "OK");
 
 		nombre.Text = string.Empty;
 		precio.Text = string.Empty;
